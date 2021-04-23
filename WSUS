@@ -1,0 +1,18 @@
+WSUS Commands:
+
+wuauclt.exe
+              Example:
+              wuauclt /detectnow /register /reportnow
+
+    Force Detection of Updates and Report to the WSUS Server:
+      /detectnow /reportnow
+
+    Cleanup all cached files and force detection:
+      net stop wuauserv
+      rmdir /S /Q C:\winnt\softwaredistribution
+      net start wuauserv
+      wuauclt.exe /resetauthorization /detectnow
+
+    Delete winhttpproxy settings:
+      proxycfg -d
+
